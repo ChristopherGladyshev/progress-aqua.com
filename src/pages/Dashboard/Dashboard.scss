@@ -1,0 +1,26 @@
+.Dashboard {
+  height: 100%;
+  margin: 0 auto;
+  background-color: #a8dadc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    width: calc(100% - 72px);
+  }
+
+  &__item {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  .swiper {
+    width: 100%;
+  }
+}
