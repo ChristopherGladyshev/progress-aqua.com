@@ -33,7 +33,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "cd build && rsync --archive --compress --delete . rim@neo-ecology.net:/var/www/neo-ecology.net/html"
+    "deploy": "cd build && rsync --archive --compress --delete . rim@progress-aqua.com:/var/www/site/html"
   },
   "eslintConfig": {
     "extends": [
