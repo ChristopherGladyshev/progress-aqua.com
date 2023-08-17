@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useAppDispatch, useAppSelector } from '../../hook/hook';
 import { fetchLogout } from '../../store/registration/userSlice';
@@ -17,6 +17,7 @@ const Menu = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const menuEl = useRef<HTMLDivElement>(null);
+  const [isActiveLogo, setIsActiveLogo] = useState<boolean>(false);
   let nav;
 
   const logoutFetch = async () => {
@@ -28,6 +29,7 @@ const Menu = () => {
   const navHendler = (event: React.MouseEvent<HTMLElement>): void => {
     const target = event.target as Element;
     if (target.classList.contains('menu__img')) return;
+    setIsActiveLogo(!isActiveLogo);
     menuEl.current?.classList.toggle('menu--active');
   }
 
@@ -39,6 +41,12 @@ const Menu = () => {
           <li className='menu__item'><Link className='menu__item-link' to={'/profile'}>PROFILE</Link></li>
           <li className='menu__item'><Link className='menu__item-link' to={'/security'}>SECURITY</Link></li>
           <li className='menu__item'><Link className='menu__item-link' to={'/device'}>DEVICE</Link></li>
+          <li className='menu__item'>
+            <Link className='menu__item-link' to={'/dashboard'}>
+              <Dashboard className='menu__img'  title='DASHBOARD'/>
+              <span className='menu__item-text' title='DASHBOARD'>DASHBOARD</span>
+            </Link>
+          </li>
         </ul>
         <ul className='menu__link-wrapper'>
           <li className='menu__item'><Link className='menu__item-link' to={'/notifications'}>NOTIFICATIONS</Link></li>
@@ -53,32 +61,26 @@ const Menu = () => {
         <ul className='menu__link-wrapper'>
           <li className='menu__item'>
             <Link className='menu__item-link' to={'/'}>
-              <HomeSvg className='menu__img' />
-              <span className='menu__item-text'>HOME</span>
-            </Link>
-          </li>
-          <li className='menu__item'>
-            <Link className='menu__item-link' to={'/dashboard'}>
-              <Dashboard className='menu__img' />
-              <span className='menu__item-text'>DASHBOARD</span>
+              <HomeSvg className='menu__img'  title='ГЛАВНАЯ'/>
+              <span className='menu__item-text' title='ГЛАВНАЯ'>ГЛАВНАЯ</span>
             </Link>
           </li>
           <li className='menu__item'>
             <Link className='menu__item-link' to={'/about-us'}>
-              <DiversitySvg className='menu__img' />
-              <span className='menu__item-text'>ABOUT US</span>
+              <DiversitySvg className='menu__img'  title='О НАС'/>
+              <span className='menu__item-text' title='О НАС'>О НАС</span>
             </Link>
           </li>
           <li className='menu__item'>
             <Link className='menu__item-link' to={'/contacts'}>
-              <ContactsSvg className='menu__img' />
-              <span className='menu__item-text'>CONTACTS</span>
+              <ContactsSvg className='menu__img'  title='КОНТАКТЫ'/>
+              <span className='menu__item-text' title='КОНТАКТЫ'>КОНТАКТЫ</span>
             </Link>
           </li>
           <li className='menu__item'>
             <Link className='menu__item-link' to={'/login'}>
-              <LoginSvg className='menu__img' />
-              <span className='menu__item-text'>LOGIN</span>
+              <LoginSvg className='menu__img' title='ВОЙТИ' />
+              <span className='menu__item-text' title='ВОЙТИ'>ВОЙТИ</span>
             </Link>
           </li>
         </ul>
@@ -92,9 +94,9 @@ const Menu = () => {
         <div>
           {nav}
         </div>
-        <div className='logo'>
+        <div className={`logo ${isActiveLogo ? 'logo--active' : ''}`} >
           {/* <img className='logo__img' src={logo} alt="" /> */}
-          <span className='logo__title'>Neo-Ecology</span>
+          <span className='logo__title'>Центр Прогрессивной Aквакультуры</span>
         </div>
       </div>
       <div className='menu__hover'></div>
