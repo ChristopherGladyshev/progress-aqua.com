@@ -35,14 +35,14 @@ const Login = () => {
   }
 
   return (
-    <div className='wrapper'>
+    <div className='login-page'>
       <div className='form'>
-        Member Login
-        <Input type='email' description='email' onInput={emailHeandler.bind(this)} />
-        <Input type='password' description='password' onInput={passwordHeandler.bind(this)} />
+        <h4>ВХОД</h4>
+        <Input type='email' description='Логин/Email' onInput={emailHeandler.bind(this)} />
+        <Input type='password' description='Пароль' onInput={passwordHeandler.bind(this)} />
         <div className='reg-form__btn'>
-          <button className='btn' onClick={() => regFetch()}>Registration</button>
-          <button className='btn' onClick={() => logFetch()}>Login</button>
+          <button className='btn' onClick={() => regFetch()}>РЕГИСТРАЦИЯ</button>
+          <button className='btn' onClick={() => logFetch()}>ВОЙТИ</button>
         </div>
         {isLoading && <p>Loading</p>}
         {error && <p>Error {error}</p>}

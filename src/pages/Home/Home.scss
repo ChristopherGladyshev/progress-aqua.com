@@ -1,129 +1,75 @@
 .home {
-  height: 100%;
+  height: 100vh;
   margin: 0 auto;
-  max-width: 1400px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #1D3557;
+  color: #f1faee;
+  position: relative;
 
-  &__header {
-    font-size: 2.5em;
-    margin-bottom: 60px;
-  }
-
-  &__wrapper {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
-
-  &-card {
-    position: relative;
-    background: #F1FAEE;
-
-    &__wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    &::after {
-      content: '';
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      background: rgba(17, 17, 17, 0.415);
-      z-index: 0;
-      top: 0;
-      left: 0;
-    }
-
-    &__title {
-      font-size: 20px;
-      font-weight: 500;
-      text-transform: uppercase;
-      position: absolute;
-      z-index: 1;
-      left: 0;
-      color: #F1FAEE;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      padding: 0;
-      margin: 0;
-    }
-  }
-
-  &__img {
-    width: 100%;
-  }
-
-  &__swiper {
-    text-align: center;
-    width: 100%;
-    overflow: hidden;
-    cursor: pointer;
-    margin-bottom: 40px;
-  }
 
   &__tetle {
     margin-bottom: 40px;
     font-size: 1.8rem;
-    max-width: 400px;
     text-align: center;
+    transition: all 06s;
+    animation-duration: 3s;
+    animation-name: title;
+    position: relative;
+    z-index: 2;
   }
 
-  &__wrapper {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-bottom: 60px;
+  @keyframes title {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
 
-  &__res {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
-    box-shadow: 0px 5px 10px 0px rgba(24, 33, 151, 0.5);
-    padding: 20px;
-    border-radius: 20px;
-    max-width: 240px;
-    width: 100%;
+  &__slide {
 
-    p {
-      font-size: 20px;
-      margin: 10px 0;
-      text-align: start;
-      position: relative;
-      padding-left: 8px;
-      letter-spacing: 1.2px;
-      &::before {
-        content: '';
-        border-radius: 50%;
-        width: 4px;
-        height: 4px;
-        top: 50%;
-        left: -5px;
-        position: absolute;
-        background: #F1FAEE;
+    &__wrapper {
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    &__filter {
+      background: rgba(0, 0, 0, 0.312);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      animation: 3s forwards;
+      animation-name: filter;
+    }
+
+    @keyframes filter {
+      from {
+        backdrop-filter: blur(0px);
+      }
+
+      to {
+        backdrop-filter: blur(4px);
       }
     }
 
-    &--img {
-      width: 200px;
-      border-radius: 50%;
-      border: 1px solid black;
-      margin-bottom: 24px;
-    }
-
-    &--wrapper {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+    &__background {
       width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
     }
   }
 }

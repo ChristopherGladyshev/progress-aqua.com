@@ -22,7 +22,7 @@ const AuthenticationForm = () => {
   }
 
   return (
-    <div>
+    <div className=''>
       AuthenticationForm
       <Input type='email' description='email' onInput={emailHeandler.bind(this)} />
       <Input type='password' description='password' onInput={passwordHeandler.bind(this)} />

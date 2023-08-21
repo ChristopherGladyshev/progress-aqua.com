@@ -96,6 +96,7 @@ const Menu = () => {
         </div>
         <div className={`logo ${isActiveLogo ? 'logo--active' : ''}`} >
           {/* <img className='logo__img' src={logo} alt="" /> */}
+          <span className='logo__title'>&copy; 2023 Все права защищены</span>
           <span className='logo__title'>Центр Прогрессивной Aквакультуры</span>
         </div>
       </div>

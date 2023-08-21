@@ -1,7 +1,9 @@
 .input {
+  margin-top: 8px;
+
   &__label {
     display: flex;
     flex-direction: column;
-    max-width: 400px;
+    width: 100%;
   }
 }
