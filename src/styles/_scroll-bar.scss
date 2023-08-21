@@ -1,0 +1,33 @@
+/* width */
+
+body {
+  overflow: overlay;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+  border: none;
+  
+}
+
+*{
+   scrollbar-color: #a8dadc transparent; /*firefox*/
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0) !important;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #a8dadc;
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #282c34;
+}
