@@ -37,21 +37,39 @@ const Menu = () => {
     nav = (
       <>
         <ul className='menu__link-wrapper'>
-          <li className='menu__item'><Link className='menu__item-link' to={'/'}>HOME</Link></li>
-          <li className='menu__item'><Link className='menu__item-link' to={'/profile'}>PROFILE</Link></li>
-          <li className='menu__item'><Link className='menu__item-link' to={'/security'}>SECURITY</Link></li>
-          <li className='menu__item'><Link className='menu__item-link' to={'/device'}>DEVICE</Link></li>
+          <li className='menu__item'>
+            <Link className='menu__item-link' to={'/'}>
+              <HomeSvg className='menu__img' title='ГЛАВНАЯ' />
+              <span className='menu__item-text' title='ГЛАВНАЯ'>ГЛАВНАЯ</span>
+            </Link>
+          </li>
+          <li className='menu__item'>
+            <Link className='menu__item-link' to={'/profile'}>
+              <span className='menu__item-text' title='ПРОФИЛЬ'>ПРОФИЛЬ</span>
+            </Link>
+          </li>
           <li className='menu__item'>
             <Link className='menu__item-link' to={'/dashboard'}>
-              <Dashboard className='menu__img'  title='DASHBOARD'/>
+              <Dashboard className='menu__img' title='DASHBOARD' />
               <span className='menu__item-text' title='DASHBOARD'>DASHBOARD</span>
             </Link>
           </li>
         </ul>
         <ul className='menu__link-wrapper'>
-          <li className='menu__item'><Link className='menu__item-link' to={'/notifications'}>NOTIFICATIONS</Link></li>
-          <li className='menu__item'><Link className='menu__item-link' to={'/settings'}>SETTINGS</Link></li>
-          <li className='menu__item'><Link className='menu__item-link' onClick={() => logoutFetch()} to={'/'}>logout</Link></li>
+          <li className='menu__item'>
+            <Link className='menu__item-link' to={'/notifications'}>
+            <span className='menu__item-text' title='УВЕДОМЛЕНИЯ'>УВЕДОМЛЕНИЯ</span>
+            </Link></li>
+          <li className='menu__item'>
+            <Link className='menu__item-link' to={'/settings'}>
+              <span className='menu__item-text'>НАСТРОЙКИ</span>
+            </Link>
+          </li>
+          <li className='menu__item'>
+            <Link className='menu__item-link' onClick={() => logoutFetch()} to={'/'}>
+              <span className='menu__item-text' title='ВЫЙТИ'>ВЫЙТИ</span>
+            </Link>
+          </li>
         </ul>
       </>
     )
@@ -61,19 +79,19 @@ const Menu = () => {
         <ul className='menu__link-wrapper'>
           <li className='menu__item'>
             <Link className='menu__item-link' to={'/'}>
-              <HomeSvg className='menu__img'  title='ГЛАВНАЯ'/>
+              <HomeSvg className='menu__img' title='ГЛАВНАЯ' />
               <span className='menu__item-text' title='ГЛАВНАЯ'>ГЛАВНАЯ</span>
             </Link>
           </li>
           <li className='menu__item'>
             <Link className='menu__item-link' to={'/about-us'}>
-              <DiversitySvg className='menu__img'  title='О НАС'/>
+              <DiversitySvg className='menu__img' title='О НАС' />
               <span className='menu__item-text' title='О НАС'>О НАС</span>
             </Link>
           </li>
           <li className='menu__item'>
             <Link className='menu__item-link' to={'/contacts'}>
-              <ContactsSvg className='menu__img'  title='КОНТАКТЫ'/>
+              <ContactsSvg className='menu__img' title='КОНТАКТЫ' />
               <span className='menu__item-text' title='КОНТАКТЫ'>КОНТАКТЫ</span>
             </Link>
           </li>
